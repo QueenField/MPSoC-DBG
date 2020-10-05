@@ -52,7 +52,7 @@ module adbg_wb_module #(
   (
     // JTAG signals
     input         tck_i,
-    output        module_tdo_o,
+    output reg    module_tdo_o,
     input         tdi_i,  // This is only used by the CRC module - data_register_i[MSB] is delayed a cycle
 
     // TAP states
@@ -62,7 +62,7 @@ module adbg_wb_module #(
 
     input [52:0]  data_register_i,
     input         module_select_i,
-    output        top_inhibit_o,
+    output reg    top_inhibit_o,
     input         rst_i,
 
     // WISHBONE master interface
@@ -103,12 +103,6 @@ module adbg_wb_module #(
   //
   // Variables
   //
-
-  //reg           wb_cyc_o;
-
-  // Declare inputs / outputs as wires / registers
-  reg    module_tdo_o;
-  reg    top_inhibit_o;
 
   // Registers to hold state etc.
   reg [31:0]   address_counter;     // Holds address for next Wishbone access

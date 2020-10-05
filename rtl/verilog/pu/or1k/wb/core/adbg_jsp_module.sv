@@ -102,10 +102,6 @@ module adbg_jsp_module #(
   // Variables
   //
 
-  // Declare inputs / outputs as wires / registers
-  wire   module_tdo_o;
-  wire   top_inhibit_o;
-
   // NOTE:  For the rest of this file, "input" and the "in" direction refer to bytes being transferred
   // from the PC, through the JTAG, and into the BIU FIFO.  The "output" direction refers to data being
   // transferred from the BIU FIFO, through the JTAG to the PC.
